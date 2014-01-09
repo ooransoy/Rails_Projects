@@ -1,0 +1,33 @@
+<h1>Listing stamps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date and time</th>
+      <th>Subject</th>
+      <th>Event</th>
+      <th>Profile</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stamps.each do |stamp| %>
+      <tr>
+        <td><%= stamp.date_and_time %></td>
+        <td><%= stamp.subject %></td>
+        <td><%= stamp.event %></td>
+        <td><%= stamp.profile_id %></td>
+        <td><%= link_to 'Show', stamp %></td>
+        <td><%= link_to 'Edit', edit_stamp_path(stamp) %></td>
+        <td><%= link_to 'Destroy', stamp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stamp', new_stamp_path %>

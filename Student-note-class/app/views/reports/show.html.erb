@@ -1,0 +1,14 @@
+<h1>Reports for exam number: <%= params[:exam_number] %> and lesson: <%= params[:lesson_name] %></h1>
+
+<table>
+<% for score in @scores %>
+
+	<tr>
+	<td><%= score.student.full_name %></td>
+	<td><%= score.score %></td>
+	</tr>
+
+<% end %>
+</table>
+
+<div id="piechart" style="width: 900px; height: 500px;"></div>

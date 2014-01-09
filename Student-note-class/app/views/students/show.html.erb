@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @student.name %>
+</p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @student.surname %>
+</p>
+
+<p>
+  <strong>Class name:</strong>
+  <%= @student.class_name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @student.age %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @student.gender %>
+</p>
+
+<% if @student.scores.count > 0 %>
+
+  <table>
+  <tr><th>Lesson</th><th>Exam No.</th><th>Score</th></tr>
+
+    <% for score in @student.scores.all %>
+    <tr><td><%= score.lesson_name %></td><td><%= score.exam_number %></td><td><%= score.score %></td><td><%= link_to 'Destroy', student_score_path(@student.id,score.id), method: :delete, data: { confirm: 'Are you sure?' } %></td></tr>
+    <% end %>
+  </table>
+
+<% else %>
+
+  <p>There is no score recorded</p>
+  <%= link_to 'New Score', new_student_score_path(@student) %>
+
+<% end %>
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>

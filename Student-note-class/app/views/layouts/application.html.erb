@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StudentNoteClass</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        	['Task', 'Scores (over or under 50)'],
+        	['Passers', <%= @passers_count %>],
+        	['Stayers', <%= @stayers_count %>]
+        ]);
+
+        var options = {
+            title: 'Passers/Stayers',
+            is3D: true
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+    }
+</script>
+
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

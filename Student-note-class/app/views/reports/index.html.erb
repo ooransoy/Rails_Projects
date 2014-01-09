@@ -1,0 +1,15 @@
+<h1>Index</h1>
+
+<%= form_tag("/reports/show", method: "post") do %>
+ <div class="field">
+    <%= label_tag(:lesson_name, "Lesson Name:") %><br>
+    <%= select_tag(:lesson_name, options_for_select(["Math", "Turkish", "Social Studies", "Science and Technology", "English", "Religion"])) %>
+  </div>
+  <div class="field">
+    <%= label_tag(:exam_number, "Exam Number:") %><br>
+    <%= select_tag(:exam_number, options_for_select(["1", "2", "3"])) %>
+  </div>
+  <div class="actions">
+    <%= submit_tag("Search") %>
+  </div>
+<% end %>

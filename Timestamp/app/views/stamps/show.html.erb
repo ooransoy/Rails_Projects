@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date and time:</strong>
+  <%= @stamp.date_and_time %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @stamp.subject %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @stamp.event %>
+</p>
+
+<p>
+  <strong>Profile:</strong>
+  <%= @stamp.profile_id %>
+</p>
+
+<%= link_to 'Edit', edit_stamp_path(@stamp) %> |
+<%= link_to 'Back', stamps_path %>

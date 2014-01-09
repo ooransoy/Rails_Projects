@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_and_time: 2014-01-07 19:09:53
+  subject: MyString
+  event: MyText
+  profile_id: 1
+
+two:
+  date_and_time: 2014-01-07 19:09:53
+  subject: MyString
+  event: MyText
+  profile_id: 1
